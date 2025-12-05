@@ -1,25 +1,29 @@
-# Requirements para Dashboard Streamlit - Tortilla México
-# Instalar con: pip install -r requirements.txt
+# Requirements for Streamlit Cloud with Geospatial Support
 
 # Core
-streamlit==1.29.0
-pandas==2.1.4
-numpy==1.26.2
+streamlit>=1.28.0
+pandas>=2.0.0
+numpy>=1.24.0
 
-# Visualización
-plotly==5.18.0
-matplotlib==3.8.2
-seaborn==0.13.0
+# Visualization
+plotly>=5.17.0
+matplotlib>=3.7.0
+seaborn>=0.12.0
 
 # Machine Learning
-scikit-learn==1.3.2
-scipy==1.11.4
+scikit-learn>=1.3.0
+scipy>=1.10.0
 
-# Geoespacial (opcional, para mapas avanzados)
-geopandas==0.14.1
-shapely==2.0.2
-folium==0.15.1
-streamlit-folium==0.15.1
+# Geospatial - ORDEN IMPORTANTE
+# Instalar en este orden para evitar conflictos
+pyproj>=3.4.0
+shapely>=2.0.0
+fiona>=1.9.0
+geopandas>=0.14.0
 
-# Utilidades
-openpyxl==3.1.2
+# Opcional - solo si usas folium
+# folium>=0.15.0
+# streamlit-folium>=0.15.0
+
+# Utilities
+openpyxl>=3.1.0
