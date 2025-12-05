@@ -19,11 +19,6 @@ import json
 from sklearn.linear_model import LinearRegression
 
 
-try:
-    import geopandas as gpd
-    GEOPANDAS_AVAILABLE = True
-except:
-    GEOPANDAS_AVAILABLE = False
 
 
 from analisis_funciones import (

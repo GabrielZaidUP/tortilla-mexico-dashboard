@@ -222,6 +222,7 @@ MAP_PATH = "./data/mexicoHigh.json"
 def load_mexico_geojson():
     """
     Carga el GeoJSON de México y lo prepara para Plotly.
+    NO necesita geopandas - solo JSON estándar!
     
     Returns:
         dict: GeoJSON listo para usar en plotly.express
@@ -234,10 +235,11 @@ def load_mexico_geojson():
         for feature in geojson['features']:
             if 'properties' in feature and 'name' in feature['properties']:
                 state_name = feature['properties']['name'].strip()
-                # Asegurar que coincidan con los nombres del CSV
                 feature['properties']['name'] = normalize_state_name(state_name)
         
+        print(f"✓ GeoJSON cargado: {len(geojson['features'])} estados")
         return geojson
+        
     except FileNotFoundError:
         print(f"⚠️ Archivo GeoJSON no encontrado: {MAP_PATH}")
         return None
