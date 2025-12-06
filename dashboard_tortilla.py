@@ -1074,7 +1074,6 @@ with tab5:
         st.metric("🌮 Crecimiento Tortilla", f"{cambio_tortilla:+.1f}%")
 
 # TAB 6
-# TAB 6
 with tab6:
     st.markdown("## 🌽 Análisis de Correlaciones Económicas")
     
@@ -1743,7 +1742,7 @@ with tab7:
         y=historical['Precio_Tortilla'],
         mode='lines+markers',
         name='Histórico',
-        line=dict(color='black', width=3),
+        line=dict(color='cyan', width=3),
         marker=dict(size=4)
     ))
     
@@ -2451,7 +2450,7 @@ with tab9:
             x=df_disparity['Year'],
             y=p(df_disparity['Year']),
             mode='lines',
-            line=dict(color='black', width=2, dash='dash'),
+            line=dict(color='yellow', width=2, dash='dash'),
             name='Tendencia',
             hoverinfo='skip'
         ))
@@ -2494,7 +2493,7 @@ with tab9:
             x=df_disparity['Year'],
             y=p_std(df_disparity['Year']),
             mode='lines',
-            line=dict(color='black', width=2, dash='dash'),
+            line=dict(color='red', width=2, dash='dash'),
             name='Tendencia',
             hoverinfo='skip'
         ))
@@ -2674,7 +2673,7 @@ with tab10:
     
     corr_maiz = df_master[['Precio_Tortilla', 'INPP_Maiz']].corr().iloc[0, 1]
     
-    st.markdown('<div class="conclusion-box">', unsafe_allow_html=True)
+
     st.markdown("### 🎯 1. Evolución Histórica General")
     st.markdown(f"""
     **Periodo analizado:** {df_master['Date'].min().year} - {df_master['Date'].max().year}
@@ -2688,7 +2687,7 @@ with tab10:
     """)
     st.markdown('</div>', unsafe_allow_html=True)
     
-    st.markdown('<div class="conclusion-box">', unsafe_allow_html=True)
+
     st.markdown("### 🏛️ 2. Impacto de Administraciones Presidenciales")
     
     presidente_mayor_incremento = df_pres.loc[df_pres['Incremento_Porcentual'].idxmax()]
@@ -2711,7 +2710,7 @@ with tab10:
     """)
     st.markdown('</div>', unsafe_allow_html=True)
     
-    st.markdown('<div class="conclusion-box">', unsafe_allow_html=True)
+
     st.markdown("### ⚡ 3. Impacto de Eventos Críticos")
     
     evento_mayor_impacto = df_eventos.loc[df_eventos['Cambio_Porcentual'].abs().idxmax()]
@@ -2735,7 +2734,7 @@ with tab10:
     """)
     st.markdown('</div>', unsafe_allow_html=True)
     
-    st.markdown('<div class="conclusion-box">', unsafe_allow_html=True)
+ 
     st.markdown("### 🗺️ 4. Disparidad Regional")
     
     estado_mas_caro = state_stats.index[0]
@@ -2756,7 +2755,7 @@ with tab10:
     """)
     st.markdown('</div>', unsafe_allow_html=True)
 
-    st.markdown('<div class="conclusion-box">', unsafe_allow_html=True)
+ 
     st.markdown("### 🏙️ 5. Análisis Urbano")
     
     if HAS_CITIES:
@@ -2779,7 +2778,7 @@ with tab10:
     
     st.markdown('</div>', unsafe_allow_html=True)
     
-    st.markdown('<div class="conclusion-box">', unsafe_allow_html=True)
+    
     st.markdown("### 📐 6. Convergencia Regional")
     
     st.markdown(f"""
